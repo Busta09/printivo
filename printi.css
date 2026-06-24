@@ -1,0 +1,131 @@
+
+:root {
+    --printivo-blue: #384A62;
+    --printivo-orange: #FF7A00;
+    --printivo-green: #20B038;
+    --printivo-bg-grey: #F8F9FB;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.first-nav {
+    background-color: #F7F6F4;
+}
+
+.nav-link1 {
+    font-size: 12.9px;
+    font-weight: 600;
+    color: #70839A;
+}
+
+
+
+.need-help {
+    font-size: 12.9px;
+    font-weight: 600; 
+    color: #70839A;
+}
+
+.phone {
+    font-size: 12.9px;
+    font-weight: 600; 
+}
+
+.navbar {
+    background-color: #ECE8D9;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2B3D49;
+}
+
+.hero-section {
+    background-color: var(--printivo-bg-grey);
+}
+
+.hero-heading {
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.hero-subheading {
+    font-size: 22px;
+}
+
+
+.hero-placeholder {
+    background: linear-gradient(135deg, var(--printivo-blue), #2d3a4f);
+    width: 260px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ============================================================
+   PRODUCT CARD
+   Bootstrap's .card gives us the box, border, and shadow.
+   But the "lift on hover" interaction and the colored image
+   placeholder are NOT something Bootstrap provides -- pure CSS.
+   ============================================================ */
+.card-img-placeholder {
+    height: 222px;
+    width: 260px;
+    background-color: var(--printivo-bg-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.image {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 273px;
+    height: 0px;
+}
+
+.card-body {
+    height: 220px;
+    width: 500px;
+}
+
+.button {
+    width: 210px;
+    height: 43px;
+    background-color: #D77F81;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    display: flex;
+}
+
+.span-button {
+    transition: transform 1s ease;
+}
+
+.span-button:hover {
+    transform: translateX(10px);
+}
+
+.image:hover {
+    transform: scaleX(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* .bird {
+    border: 1px solid #F6F4EC;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+} */
+
