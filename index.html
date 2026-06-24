@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printivo Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/printi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_right" />
+</head>
+<body >
+
+    <!-- ====================================================
+         TOP UTILITY BAR
+         A thin strip ABOVE the main navbar. Real e-commerce
+         sites often have this for secondary links (help,
+         support contacts, country/currency selectors).
+         d-none d-md-flex = hidden on phone, visible from tablet up
+         (there's no room for this extra row on small screens).
+    ==================================================== -->
+    <div class="first-nav border-bottom py-3 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- LEFT: secondary links -->
+            <div class="d-flex gap-5">
+                <a href="#" class="nav-link1 text-decoration-none">Cost Calculator</a>
+                <a href="#" class="nav-link1 text-decoration-none">Discover Stores</a>
+                <a href="#" class="nav-link1 text-decoration-none">Track Orders</a>
+            </div>
+
+            <!-- RIGHT: contact + country selectors -->
+            <div class="d-flex align-items-center gap-4">
+                <span class="need-help">Need help? Call: <br>
+                    <a href="tel:+2347069000083" class="phone text-decoration-none">+2347069000083</a> or
+                    <a href="tel:+2349035000505" class="phone text-decoration-none">+2349035000505</a>
+                </span>
+                <span><img src="/images/imageye___-_imgi_1_default (1).png" alt=""></span>
+                <span class="border rounded-pill px-3 py-2"><img src="/images/imageye___-_imgi_2_default (1).png" alt=""> Nigeria</span>
+                <span class="border rounded-pill px-3 py-2 ms-3"><img src="/images/imageye___-_imgi_3_default (1).png" alt=""> UK</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================
+         MAIN NAVBAR
+         "navbar-expand-lg" means: show the full menu on screens
+         992px and wider (lg breakpoint). Below that, it collapses
+         into a hamburger button automatically — Bootstrap handles
+         this with ZERO custom JavaScript from us.
+    ==================================================== -->
+    <nav class="navbar navbar-expand-lg py-3">
+        <div class="container">
+
+            <!-- navbar-brand = the logo/site name -->
+            <span style="width: 330px;">
+                <a href=""><img src="/images/imageye___-_imgi_4_default.png" alt=""></a>
+            </span>
+
+            <!-- This button ONLY appears on small screens (below lg).
+                 data-bs-toggle="collapse" tells Bootstrap's JS:
+                 "when clicked, show/hide the element with id=navbarMenu" -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- This whole div HIDES on small screens until the button above is clicked.
+                 On large screens (lg+), it's always visible because of navbar-expand-lg. -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <!-- This menu sits in the CENTER on the real site, so we
+                     use mx-auto (margin-left & margin-right: auto) instead
+                     of ms-auto, to push it away from BOTH edges evenly. -->
+                <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#">Become a Reseller</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#">Merch Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#">Marketplace</a>
+                    </li>
+                </ul>
+
+                <!-- RIGHT side: sign in / create account / cart -->
+                <ul class="navbar-nav align-items-lg-center gap-lg-3 ms-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#" style="color: #DE9E9B;">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold" href="#">Create Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#"><img src="/images/imageye___-_imgi_5_default.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====================================================
+         HERO SECTION
+         We use Bootstrap's ROW/COL grid here (not the jumbotron
+         component — that's outdated in Bootstrap 5). Instead we
+         build it ourselves with utility classes: padding (py-5),
+         text alignment, and a 2-column row.
+    ==================================================== -->
+    <section class="hero-section py-1" style="background-color: #ECE8D9;">
+        <div class="container py-1">
+            <div class="row align-items-center">
+
+                <!-- col-lg-6: on laptop+ screens, take half the row.
+                     col-12: on phones/tablets, take the FULL row (stacks). -->
+                <div class="col-12 col-lg-6 mb-5">
+                    <h1 class="hero-heading fw-bold" style="color: var(--printivo-blue); font-family: Georgia, serif;">
+                        Quality Prints
+                    </h1>
+                    <p class="hero-subheading fw-semibold mt-2" style="color: #8a93a3;">
+                        Shipped to your doorstep
+                    </p>
+
+                    <p class="fw-semibold mt-4 mb-2" style="color: var(--printivo-blue);">
+                        What would you like to print today?
+                    </p>
+
+                    <!-- Bootstrap's input-group component: combines an input
+                         and a button into one connected unit -->
+                    <div class="input-group input-group-lg mt-2 shadow-sm" style="max-width: 630px;">
+                        <input type="text" class="form-one form-control border-0 py-3" placeholder="Search for Business cards, T-shirts, Mugs, etc" style="height: 90px;">
+                        <button class="btn bg-white border-0" type="button">
+                            <img src="/images/imageye___-_imgi_7_default.png" alt="">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- This column hides completely on small screens (d-none),
+                     and becomes visible again on lg+ screens (d-lg-block).
+                     Useful because a big decorative image just wastes space on mobile. -->
+                <div class="col-12 col-lg-6 d-none d-lg-flex justify-content-center">
+                    <img src="/images/imageye___-_imgi_8_Card3_n9kqin.png" alt="" style="width: 431px; height: 334px; margin-left: 350px; margin-top: 90px;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         POPULAR PRODUCTS
+         row-cols-1 row-cols-md-2 row-cols-lg-4 = responsive card grid:
+         1 card per row on phone, 2 per row on tablet, 4 per row on laptop+
+         This achieves the SAME effect as your earlier col-12/col-md-6/col-lg-4
+         demo, just written the "row-cols" way instead.
+
+         NOTE: with 11 products and row-cols-lg-4, the grid AUTOMATICALLY
+         wraps into multiple neat rows of 4 on laptop. We don't need to write
+         separate <div class="row"> blocks -- one row wrapper handles it.
+    ==================================================== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold" style="color: var(--printivo-blue); font-family: Georgia, serif;">Popular Products</h2>
+                <a href="#" class="text-decoration-none fw-bold" style="color: #D87F92;">See All Products</a>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+                <!-- CARD 1 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_40_1778857715_Tolani-Babalola.png" style="width: 262px; height: 224px;" alt="" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Two-Sided Business cards</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦15,100 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3">Browse Two-Sided Bu...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_44_1656003107_social-media--15.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Round Stickers (3.5" <br> Diameter)</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦17,000 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3 ">Browse Round Stick...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_45_1661456358_social-media--16.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Simple Mugs</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦4,800 <span class="text-muted fs-6 fw-bold small">per 1</span></p>
+                            <button class="button mt-3 ">Browse Simple Mugs...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_46_1439790190_postcard.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Postcards (A6)</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦22,300 <span class="text-muted fs-6 fw-bold small">per 50</span></p>
+                            <button class="button mt-3 ">Browse Postcards (A...<span class="span-button material-symbols-outlined">chevron_right</span> </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_13_1446183154_big rollup banner.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Roll Up Banners (Big Base)</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦65,500 <span class="text-muted fs-6 fw-bold small">per 1</span></p>
+                            <button class="button mt-3 ">Browse Roll Up Bann...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_48_1775484810_IMG-20260406-WA0011.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">A2 Posters</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦0 <span class="text-muted fs-6 fw-bold small">per</span></p>
+                            <button class="button mt-3 ">Browse A2 Poster...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 7 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_49_1473167305_trifold-brochure-printing.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Trifold Brochures</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦47,500 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3 ">Browse Trifold Broc...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 8 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_50_1456215784_12.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Landscape ID Cards</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦4,500 <span class="text-muted fs-6 fw-bold small">per 1</span></p>
+                            <button class="button mt-3 ">Browse Landscape ID...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 9 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_51_1485151940_White-tshirt.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Greeting Cards</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦6,000 <span class="text-muted fs-6 fw-bold small">per 50</span></p>
+                            <button class="button mt-3 ">Browse Off White T-...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 10 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_18_1572258123_product-3-(1).png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">A5 flyers (Single Sided)</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦115,280 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3 ">Browse A4 Branded P...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 11 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_52_1607424257_63f28e7a-da1d-4685-a297-964e186a2170.jpg" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Stickers</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦27,500 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3 ">Browse A4 Courier B...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section py-5>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold" style="color: var(--printivo-blue); font-family: Georgia, serif;">Popular Categories</h2>
+                <a href="#" class="text-decoration-none fw-bold" style="color: #D87F92;">See All Categories</a>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+                <!-- CARD 1 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_41_1473159158_Christmas-card-for-this-wonderful-season.png" style="width: 262px; height: 224px;" alt="" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">Greeting Cards</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦15,100 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3 ">Browse Greeting Car...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_42_1778057068_WhatsApp-Image-2026-05-06-at-9.44.04-AM.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">A5 flyers (single sided)</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦17,000 <span class="text-muted fs-6 fw-bold small">per 100</span></p>
+                            <button class="button mt-3 ">Browse A5 Flyers (S...<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm product-card">
+                        <div class="card-img-placeholder"><img src="/images/imageye___-_imgi_43_1473165427_stickers.png" alt="" style="width: 262px; height: 224px;" class="image"></div>
+                        <div class="card-body">
+                            <h6 class="card-title fw-semibold">A4 Courier Bags</h6>
+                            <p class="text-muted small text-uppercase mb-1 mt-4 fw-semibold">starting at</p>
+                            <p class="fs-4 fw-bold mb-0" style="color: var(--printivo-blue);">₦4,800 <span class="text-muted fs-6 fw-bold small">per 1</span></p>
+                            <button class="button mt-3 ">Browse Stickers<span class="span-button material-symbols-outlined">chevron_right</span></button>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- ====================================================
+         TRUST STRIP — "Nigeria's No.1 online print shop"
+         A simple heading + a row of brand-name text logos.
+         Real companies usually license their own logos here,
+         but for a learning clone we'll just style their NAMES
+         using bold text + brand-ish colors, which is a common
+         placeholder technique while a real design is pending.
+    ==================================================== -->
+    <section class="py-5 border-top">
+        <div class="container">
+            <h2 class="fw-bold" style="color: var(--printivo-blue); font-family: Georgia, serif;">
+                Nigeria's No. 1 online print shop 👑
+            </h2>
+            <p class=" mb-5 fs-5 fw-semibold" style="max-width: 600px; color: #516885;">
+                Our print services and solutions are trusted by these brands and over 15,000 other businesses in Nigeria.
+            </p>
+
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 align-items-center text-center logo-strip" style="line-height: 3;">
+                <div class="col fw-bold fs-5">Microsoft</div>
+                <div class="col fw-bold fs-5">Deloitte.</div>
+                <div class="col fw-bold fs-5">SAMSUNG</div>
+                <div class="col fw-bold fs-5">Google</div>
+                <div class="col fw-bold fs-5">IROKOtv</div>
+                <div class="col fw-bold fs-5">hotels.ng</div>
+                <div class="col fw-bold fs-5">Uber</div>
+                <div class="col fw-bold fs-5">BBC</div>
+                <div class="col fw-bold fs-5">Sterling</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         TESTIMONIALS
+         3-column row of "tweet style" cards. bg-light section
+         background makes this block visually distinct from the
+         white sections above and below it.
+    ==================================================== -->
+    <section class="py-5" style="background-color: #EAF1FB;">
+        <div class="container">
+            <h2 class="fw-bold mb-4" style="color: var(--printivo-blue); font-family: Georgia, serif;">
+                What Customers Say About Us 👏
+            </h2>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col" style="max-width: 350px; height: 185px;">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="ms-2"><img style="margin-bottom: 75px;" src="/images/imageye___-_imgi_24_default.png" alt=""></div>
+                            <div class="ms-3">
+                                <strong style="font-size: 14px;">Amina Ebele</strong>
+                                <span class="text-muted small"><a class="fw-semibold text-decoration-none" style="color: #45BAF9;" href="">@DeliciousAmina</a></span>
+                                <p class="small mb-0 mt-3">I am now the unofficial <a class="fw-normal text-decoration-none" style="color: #45BAF9;" href="">@Printivo</a> ambassador. What these guys just pulled to ensure I got my menu cards today is stunning!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" style="max-width: 350px; height: 185px;">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="ms-2"><img style="margin-bottom: 75px;" src="/images/imageye___-_imgi_24_default.png" alt=""></div>
+                            <div class="ms-3">
+                                <strong style="font-size: 14px;">Oluwatosin</strong>
+                                <span class="text-muted small"><a class="fw-semibold text-decoration-none" style="color: #45BAF9;" href="">@tosingirlfx</a></span>
+                                <p class="small mb-0 mt-3"><a class="fw-normal text-decoration-none" style="color: #45BAF9;" href="">@Printivo</a> delivered my mugs in 24hrs. Thank you so much! It's nice doing business with you. More to come.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" style="max-width: 350px; height: 185px;">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="bird ms-2"><img style="margin-bottom: 75px;" src="/images/imageye___-_imgi_24_default.png" alt=""></div>
+                            <div class="ms-3">
+                                <strong style="font-size: 14px;">Oluwatosin</strong>
+                                <span class="text-muted small"><a class="fw-semibold text-decoration-none" style="color: #45BAF9;" href="">@olgablark</a></span>
+                                <p class="small mb-0 mt-3">These guys <a class="fw-normal text-decoration-none" style="color: #45BAF9;" href="">@Printivo</a> are really awesome and affordable. Excellent customer service and delivery too. Thank you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         WHY CHOOSE US
+         A simple 3-column feature row. row-cols handles all
+         the responsiveness here. Left-aligned heading + icons,
+         matching the real site (not centered).
+    ==================================================== -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mt-5 mb-4 fw-semibold fs-3" style="color: var(--printivo-blue); font-family: Georgia, serif;">
+                You can count on us for:
+            </h2>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col d-flex gap-3">
+                    <div class="fs-2"><img src="/images/imageye___-_imgi_25_default.png" alt=""></div>
+                    <div>
+                        <h6 class="fw-bold fs-6">Fast Turnaround Within Days</h6>
+                        <p class="text-muted small fs-6">Your order gets to you within 3-7 working days via DHL or our very own Printivo Direct.</p>
+                    </div>
+                </div>
+
+                <div class="col d-flex gap-3">
+                    <div class="fs-2"><img src="/images/imageye___-_imgi_26_default.png" alt=""></div>
+                    <div>
+                        <h6 class="fw-bold fs-6">100% Top Quality</h6>
+                        <p class="text-muted small fs-6">Only the finest materials, machines and people will be involved in fulfilling your order.</p>
+                    </div>
+                </div>
+
+                <div class="col d-flex gap-3">
+                    <div class="fs-2"><img src="/images/imageye___-_imgi_27_default.png" alt=""></div>
+                    <div>
+                        <h6 class="fw-bold fs-6">Affordable Services</h6>
+                        <p class="text-muted small fs-6">All products are adequately priced to ensure you get value for your money at all times.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         PRESS / AS SEEN ON
+         Same "styled text as logo placeholder" technique as the
+         trust strip earlier -- a light grey background section
+         to visually separate it before the dark footer.
+    ==================================================== -->
+    <section class="py-5" style="background-color: #F4F2EF;">
+        <div class="container">
+            <h2 class="fw-bold mb-5 mt-5" style="color: var(--printivo-blue); font-family: Georgia, serif;">
+                Our amazing work got noticed by:
+            </h2>
+
+            <div class="row row-cols-2 row-cols-md-5 g-4" style="margin-bottom: 50px;">
+                <div class="col">
+                    <div><img class="mb-2" style="width: 180px; height: 30px;" src="/images/imageye___-_imgi_28_default.png" alt=""></div>
+                    <a href="#" class="small text-decoration-underline fs-6 fw-semibold" style="color: #516B84;">Read the article here</a>
+                </div>
+                <div class="col">
+                    <div><img class="mb-2" src="/images/imageye___-_imgi_29_default.png" alt=""></div>
+                    <a href="#" class="small text-decoration-underline fs-6 fw-semibold" style="color: #516B84;">Read the article here</a>
+                </div>
+                <div class="col">
+                    <div><img class="mb-2" src="/images/imageye___-_imgi_30_Techpoint_Logo_ucyvgg.png " alt=""></div>
+                    <a href="#" class="small text-decoration-underline fs-6 fw-semibold" style="color: #516B84;">Read the article here</a>
+                </div>
+                <div class="col">
+                    <div><img class="mb-2" src="/images/imageye___-_imgi_31_default.png" alt=""></div>
+                    <a href="#" class="small text-decoration-underline fs-6 fw-semibold" style="color: #516B84;">Read the article here</a>
+                </div>
+                <div class="col">
+                    <div><img class="mb-2" src="/images/imageye___-_imgi_32_default.png" alt=""></div>
+                    <a href="#" class="small text-decoration-underline fs-6 fw-semibold" style="color: #516B84;">Read the article here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         FOOTER
+         Another row/col grid, this time with 4 link columns
+         that stack on mobile and sit side by side on tablet+.
+    ==================================================== -->
+    <footer class="text-white pt-5 pb-4" style="background-color: var(--printivo-blue);">
+        <div class="container">
+            <div class="row g-4 mt-3 mb-5">
+
+                <div class="col-12 col-md-3">
+                    <h5 class="fs-5 fw-bold mb-3">Printivo</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2 fs-6 "><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Track Order</a></li>
+                        <li class="mb-2 f-6"><a href="#" class="text-white text-decoration-none">Printivo Promise</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Printivo Blog</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Career</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h5 class="fs-5 fw-bold mb-3">Help and Information</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Paper Quality</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Terms and Conditions</a>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Font Licenses</a></li>
+                        <li class="mb-2 fs-6"><a href="#" class="text-white text-decoration-none">Shipping and Delivery</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h5 class="fs-5 fw-bold mb-3">Make Money</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Refer a friend & earn ₦1,000</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Become a Reseller</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sell your Designs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Merch Store</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-3">
+                    <h5 class="fs-5 fw-bold mb-3">Follow Us</h5>
+                    <div class="d-flex gap-4 fs-5 mb-4">
+                        <a href="#" class="text-white"><img src="/images/imageye___-_imgi_33_default.png" alt=""></a>
+                        <a href="#" class="text-white"><img src="/images/imageye___-_imgi_34_default.png" alt=""></a>
+                        <a href="#" class="text-white"><img src="/images/imageye___-_imgi_35_default.png" alt=""></a>
+                        <a href="#" class="text-white"><img src="/images/imageye___-_imgi_36_default.png" alt=""></a>
+                    </div>
+
+                    <h6 class="fw-bold mb-4">Accepted Payments</h6>
+                    <div class="d-flex gap-2 small mb-4">
+                        <img style="width: 170px; height: 15px;" src="/images/imageye___-_imgi_37_payment.png" alt="">
+                    </div>
+
+                    <h6 class="fw-bold mb-3">Delivery</h6>
+                    <img src="/images/imageye___-_imgi_38_shipping.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="py-4" style="background-color: #CBCAC8;">
+        <p class="text-center fs-6 small mb-0" style="color: #6C6A71;">
+            Copyright © 2023 Printivo. All rights reserved.
+        </p>
+    </section>
+
+    <!-- BOOTSTRAP JS - needed for things like dropdown menus, navbar toggle on mobile -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+</body>
+</html>
